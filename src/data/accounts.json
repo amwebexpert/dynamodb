@@ -1,12 +1,12 @@
 [
     {
         "uuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "name": "Upwave",
+        "name": "Dary Kings Lte",
         "campaigns": [123, 456, 789]
     },
     {
         "uuid": "434586e2-b269-4730-9559-9fcf18037e42",
-        "name": "Web Experts Inc.",
+        "name": "Web Experts Inc",
         "campaigns": [111, 222]
     }
 ]
