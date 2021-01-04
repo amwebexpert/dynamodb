@@ -1,0 +1,13 @@
+# Files downloaded from DynamoDB Local jar
+# https://s3.us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz
+# 
+/DynamoDBLocal_lib
+/third_party_licenses
+.DS_Store
+DynamoDBLocal.jar
+LICENSE.txt
+README.txt
+
+# Other files
+/node_modules
+shared-local-instance.db
