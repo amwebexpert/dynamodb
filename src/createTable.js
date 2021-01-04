@@ -5,12 +5,14 @@ AWS.config.update({
 });
 
 var params = {
-    TableName: 'authorization_test',
+    TableName: 'authorization_local',
     KeySchema: [
-        { AttributeName: 'id', KeyType: 'HASH' },  // Partition key
+        { AttributeName: 'pkey', KeyType: 'HASH' },  // Partition key
+        { AttributeName: 'skey', KeyType: 'RANGE' },  // Sort key
     ],
     AttributeDefinitions: [
-        { AttributeName: 'id', AttributeType: 'N' },
+        { AttributeName: 'pkey', AttributeType: 'S' },
+        { AttributeName: 'skey', AttributeType: 'S' },
     ],
     ProvisionedThroughput: {
         ReadCapacityUnits: 5,

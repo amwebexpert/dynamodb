@@ -1,3 +1,14 @@
+## Setup
+
+- Downloaded DynamoDB Local jar from AWS:
+    https://s3.us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz
+- Unzip it inside this project, this normaly creates these artifacts:
+    /DynamoDBLocal_lib
+    /third_party_licenses
+    DynamoDBLocal.jar
+    LICENSE.txt
+    README.txt
+
 ## Starting local instance of DynamoDB
     ./startDynamoDB.sh
 

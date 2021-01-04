@@ -1,24 +1,23 @@
 const AWS = require('aws-sdk');
 const fs = require('fs');
-AWS.config.update({
-    region: 'local',
-    endpoint: 'http://localhost:8000'
-});
-
+AWS.config.update({ region: 'local', endpoint: 'http://localhost:8000' });
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-console.log('Importing Scranton into DynamoDB. Please wait.');
-const entries = JSON.parse(fs.readFileSync('src/data.json', 'utf8'));
+// Accounts sample
+// -----------------------------------
+console.log('Importing accounts:');
+const accounts = JSON.parse(fs.readFileSync('src/accounts.json', 'utf8'));
 
-entries.forEach(function (scran) {
-    console.log(scran)
+accounts.forEach(function (account) {
+    console.log(account);
+
     const params = {
-        TableName: 'authorization_test',
+        TableName: 'authorization_local',
         Item: {
-            id: scran.id,
-            type: scran.type,
-            name: scran.name,
-            description: scran.description
+            pkey: `account:${account.pkey}`,
+            skey: `metadata:${account.pkey}`,
+            name: account.name,
+            campaigns: account.campaigns
         }
     };
 
@@ -26,7 +25,7 @@ entries.forEach(function (scran) {
         if (err) {
             console.error(err);
         } else {
-            console.log('PutItem succeeded:', scran.name);
+            console.log(`PutItem succeeded for ${account.name}`, data);
         }
     });
 });
