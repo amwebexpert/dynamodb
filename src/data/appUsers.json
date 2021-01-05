@@ -7,15 +7,15 @@
     },
     {
         "uuid": "a4d3c181-a0cc-471a-b750-66cddb2c403b",
-        "firstName": "Chuck",
+        "firstName": "Bob",
         "lastName": "Norris",
-        "email": "chuck.norris@daryking.com"
+        "email": "bob.norris@daryking.com"
     },
     {
         "uuid": "6e4f047f-97aa-473f-bd82-1b6e276c8210",
-        "firstName": "André",
-        "lastName": "Masson",
-        "email": "andre.masson@upwave.com"
+        "firstName": "Mari",
+        "lastName": "Glad",
+        "email": "mari.glad@daryking.com"
     },
     {
         "uuid": "63146bfd-e3c8-44ec-9132-a8be8aced810",

@@ -3,23 +3,23 @@ const fs = require('fs');
 AWS.config.update({ region: 'local', endpoint: 'http://localhost:8000' });
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-// Users sample
+// Application users sample
 // -----------------------------------
-console.log('Importing users:');
-const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf8'));
+console.log('Importing appUsers:');
+const appUsers = JSON.parse(fs.readFileSync('src/data/appUsers.json', 'utf8'));
 
-users.forEach(function (user) {
-    console.log(`\ - ${user.email}`);
+appUsers.forEach(function (appUser) {
+    console.log(`\ - ${appUser.email}`);
 
-    const uuid = user.uuid;
+    const uuid = appUser.uuid;
     const params = {
         TableName: 'authorization_local',
         Item: {
             pkey: `user:${uuid}`,
             skey: `metadata:${uuid}`,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email
+            firstName: appUser.firstName,
+            lastName: appUser.lastName,
+            email: appUser.email
         }
     };
 
@@ -73,6 +73,34 @@ teams.forEach(function (team) {
             skey: `team:${uuid}`,
             name: team.name,
             subjects: team.subjects
+        }
+    };
+
+    docClient.put(params, function (err, _data) {
+        if (err) {
+            console.error(err);
+        }
+    });
+});
+
+// TeamUsers sample
+// -----------------------------------
+console.log('Importing team member elements:');
+const teamMembers = JSON.parse(fs.readFileSync('src/data/teamMembers.json', 'utf8'));
+
+teamMembers.forEach(function (teamMember, i) {
+    console.log(`\ - membership ${(i+1)}: ${teamMember.note}`);
+
+    const accountUuid = teamMember.accountUuid;
+    const teamUuid = teamMember.teamUuid;
+    const userUuid = teamMember.userUuid;
+    const params = {
+        TableName: 'authorization_local',
+        Item: {
+            pkey: `account:${accountUuid}:team:${teamUuid}`,
+            skey: `user:${userUuid}`,
+            privileges: teamMember.privileges,
+            note: teamMember.note
         }
     };
 
