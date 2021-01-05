@@ -42,7 +42,7 @@ params = {
                 }
             ],
             Projection: {
-                ProjectionType: 'KEYS_ONLY'
+                ProjectionType: 'ALL' // ALL, KEYS_ONLY, INCLUDE
             },
             ProvisionedThroughput: {
                 ReadCapacityUnits: 5,
