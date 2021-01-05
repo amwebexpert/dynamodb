@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const fs = require('fs');
 AWS.config.update({ region: 'local', endpoint: 'http://localhost:8000' });
-var docClient = new AWS.DynamoDB.DocumentClient();
+var documentClient = new AWS.DynamoDB.DocumentClient();
 
 // Application users sample
 // -----------------------------------
@@ -19,11 +19,12 @@ appUsers.forEach(function (appUser) {
             skey: `metadata:${uuid}`,
             firstName: appUser.firstName,
             lastName: appUser.lastName,
-            email: appUser.email
+            email: appUser.email,
+            name: `${appUser.firstName} ${appUser.lastName}`
         }
     };
 
-    docClient.put(params, function (err, _data) {
+    documentClient.put(params, function (err, _data) {
         if (err) {
             console.error(err);
         }
@@ -49,7 +50,7 @@ accounts.forEach(function (account) {
         }
     };
 
-    docClient.put(params, function (err, _data) {
+    documentClient.put(params, function (err, _data) {
         if (err) {
             console.error(err);
         }
@@ -76,7 +77,7 @@ teams.forEach(function (team) {
         }
     };
 
-    docClient.put(params, function (err, _data) {
+    documentClient.put(params, function (err, _data) {
         if (err) {
             console.error(err);
         }
@@ -104,7 +105,7 @@ teamMembers.forEach(function (teamMember, i) {
         }
     };
 
-    docClient.put(params, function (err, _data) {
+    documentClient.put(params, function (err, _data) {
         if (err) {
             console.error(err);
         }

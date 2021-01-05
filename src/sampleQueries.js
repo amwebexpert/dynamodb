@@ -24,7 +24,6 @@ params = {
 };
 // documentClient.get(params, callbackHandler);
 
-
 console.log('Get teams of Account:');
 console.log('--------------------------------------------------------------------------------');
 params = {
@@ -33,6 +32,17 @@ params = {
     ExpressionAttributeValues: {
         ":pkey": 'account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb',
         ":skey": 'team:',
+    }
+};
+// documentClient.query(params, callbackHandler);
+
+console.log('Get all members of a team:');
+console.log('--------------------------------------------------------------------------------');
+params = {
+    TableName: 'authorization_local',
+    KeyConditionExpression: 'pkey = :pkey',
+    ExpressionAttributeValues: {
+        ":pkey": 'account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb:team:d7b3a017-3987-4f4e-bc17-c9b89d0354cf',
     }
 };
 documentClient.query(params, callbackHandler);
