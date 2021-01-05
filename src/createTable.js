@@ -22,6 +22,7 @@ params = {
     AttributeDefinitions: [
         { AttributeName: 'pkey', AttributeType: 'S' },
         { AttributeName: 'skey', AttributeType: 'S' },
+        { AttributeName: 'entityType', AttributeType: 'S' },
         { AttributeName: 'name', AttributeType: 'S' },
     ],
     ProvisionedThroughput: {
@@ -38,6 +39,26 @@ params = {
                 },
                 {
                     AttributeName: 'pkey',
+                    KeyType: 'RANGE'
+                }
+            ],
+            Projection: {
+                ProjectionType: 'ALL' // ALL, KEYS_ONLY, INCLUDE
+            },
+            ProvisionedThroughput: {
+                ReadCapacityUnits: 5,
+                WriteCapacityUnits: 5
+            }
+        },
+        {
+            IndexName: 'name_index',
+            KeySchema: [
+                {
+                    AttributeName: 'entityType',
+                    KeyType: 'HASH'
+                },
+                {
+                    AttributeName: 'name',
                     KeyType: 'RANGE'
                 }
             ],

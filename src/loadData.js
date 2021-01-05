@@ -20,7 +20,8 @@ appUsers.forEach(function (appUser) {
             firstName: appUser.firstName,
             lastName: appUser.lastName,
             email: appUser.email,
-            name: `${appUser.firstName} ${appUser.lastName}`
+            name: `${appUser.firstName} ${appUser.lastName}`,
+            entityType: 'appUser'
         }
     };
 
@@ -46,7 +47,8 @@ accounts.forEach(function (account) {
             pkey: `account:${uuid}`,
             skey: `metadata:${uuid}`,
             name: account.name,
-            campaigns: account.campaigns
+            campaigns: account.campaigns,
+            entityType: 'account'
         }
     };
 
@@ -73,7 +75,8 @@ teams.forEach(function (team) {
             pkey: `account:${accountUuid}`,
             skey: `team:${uuid}`,
             name: team.name,
-            subjects: team.subjects
+            subjects: team.subjects,
+            entityType: 'team'
         }
     };
 
@@ -101,7 +104,8 @@ teamMembers.forEach(function (teamMember, i) {
             pkey: `account:${accountUuid}:team:${teamUuid}`,
             skey: `user:${userUuid}`,
             privileges: teamMember.privileges,
-            note: teamMember.note
+            note: teamMember.note,
+            entityType: 'teamMembership'
         }
     };
 

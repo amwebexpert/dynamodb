@@ -73,4 +73,36 @@ params = {
         ":name": 'Team',
     }
 };
+// documentClient.query(params, callbackHandler);
+
+console.log('Find Account by name begins_with:');
+console.log('--------------------------------------------------------------------------------');
+params = {
+    TableName: 'authorization_local',
+    IndexName: 'name_index',
+    KeyConditionExpression: 'entityType = :entityType and begins_with(#name, :name)',
+    ExpressionAttributeNames: {
+        "#name": 'name',
+    },
+    ExpressionAttributeValues: {
+        ":entityType": "account",
+        ":name": 'W',
+    }
+};
+documentClient.query(params, callbackHandler);
+
+console.log('Find users by name begins_with:');
+console.log('--------------------------------------------------------------------------------');
+params = {
+    TableName: 'authorization_local',
+    IndexName: 'name_index',
+    KeyConditionExpression: 'entityType = :entityType and begins_with(#name, :name)',
+    ExpressionAttributeNames: {
+        "#name": 'name',
+    },
+    ExpressionAttributeValues: {
+        ":entityType": "appUser",
+        ":name": 'J',
+    }
+};
 documentClient.query(params, callbackHandler);
