@@ -1,9 +1,9 @@
 [
     {
         "note": "john.smith@webexperts.com  -->  WebExpert Team #1  --> TEAM GUESS",
-        "accountUuid": "434586e2-b269-4730-9559-9fcf18037e42",
-        "teamUuid": "7c9e1528-4b23-4b48-b102-68a1efbb85d8",
-        "userUuid": "63146bfd-e3c8-44ec-9132-a8be8aced810",
+        "accountUuid": "acc_id_2",
+        "teamUuid": "team_id_3",
+        "userUuid": "user_id_4",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -12,9 +12,9 @@
     },
     {
         "note": "william.boater@webexperts.com  -->  WebExpert Team #1  --> TEAM USER",
-        "accountUuid": "434586e2-b269-4730-9559-9fcf18037e42",
-        "teamUuid": "7c9e1528-4b23-4b48-b102-68a1efbb85d8",
-        "userUuid": "4ae5b3ed-c1e1-4266-86d6-4be2da6d8de4",
+        "accountUuid": "acc_id_2",
+        "teamUuid": "team_id_3",
+        "userUuid": "user_id_5",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -26,9 +26,9 @@
     },
     {
         "note": "john.doe@daryking.com  -->  DaryKing Team One  --> TEAM GUESS",
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "teamUuid": "d7b3a017-3987-4f4e-bc17-c9b89d0354cf",
-        "userUuid": "b8769959-0baa-4689-844f-a869a9676a38",
+        "accountUuid": "acc_id_1",
+        "teamUuid": "team_id_1",
+        "userUuid": "user_id_1",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -37,9 +37,9 @@
     },
     {
         "note": "bob.norris@daryking.com  -->  DaryKing Team One  --> TEAM GUESS",
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "teamUuid": "d7b3a017-3987-4f4e-bc17-c9b89d0354cf",
-        "userUuid": "a4d3c181-a0cc-471a-b750-66cddb2c403b",
+        "accountUuid": "acc_id_1",
+        "teamUuid": "team_id_1",
+        "userUuid": "user_id_2",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -48,9 +48,9 @@
     },
     {
         "note": "bob.norris@daryking.com  -->  DaryKing Team Two  --> TEAM GUESS",
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "teamUuid": "3d960d8a-c518-410d-a7d4-e94919f1ed2a",
-        "userUuid": "a4d3c181-a0cc-471a-b750-66cddb2c403b",
+        "accountUuid": "acc_id_1",
+        "teamUuid": "team_id_2",
+        "userUuid": "user_id_2",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -59,9 +59,9 @@
     },
     {
         "note": "mari.glad@daryking.com  -->  DaryKing Team One  --> TEAM USER",
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "teamUuid": "d7b3a017-3987-4f4e-bc17-c9b89d0354cf",
-        "userUuid": "6e4f047f-97aa-473f-bd82-1b6e276c8210",
+        "accountUuid": "acc_id_1",
+        "teamUuid": "team_id_1",
+        "userUuid": "user_id_3",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",
@@ -73,9 +73,9 @@
     },
     {
         "note": "mari.glad@daryking.com  -->  DaryKing Team Two  --> TEAM USER",
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "teamUuid": "3d960d8a-c518-410d-a7d4-e94919f1ed2a",
-        "userUuid": "6e4f047f-97aa-473f-bd82-1b6e276c8210",
+        "accountUuid": "acc_id_1",
+        "teamUuid": "team_id_2",
+        "userUuid": "user_id_3",
         "privileges": [
             "PRIVILEGE.TEAM.READ_TEAM_SUBJECTS",
             "PRIVILEGE.TEAM.READ_TEAM_NON_UPWAVER_MEMBERS",

@@ -1,7 +1,7 @@
 [
     {
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "uuid": "d7b3a017-3987-4f4e-bc17-c9b89d0354cf",
+        "accountUuid": "acc_id_1",
+        "uuid": "team_id_1",
         "name": "DaryKing Team One",
         "subjects": [
             {
@@ -10,8 +10,8 @@
         ]
     },
     {
-        "accountUuid": "a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
-        "uuid": "3d960d8a-c518-410d-a7d4-e94919f1ed2a",
+        "accountUuid": "acc_id_1",
+        "uuid": "team_id_2",
         "name": "DaryKing Team Two",
         "subjects": [
             {
@@ -22,8 +22,8 @@
         ]
     },
     {
-        "accountUuid": "434586e2-b269-4730-9559-9fcf18037e42",
-        "uuid": "7c9e1528-4b23-4b48-b102-68a1efbb85d8",
+        "accountUuid": "acc_id_2",
+        "uuid": "team_id_3",
         "name": "WebExpert Team #1",
         "subjects": [
             {

@@ -18,8 +18,8 @@ console.log('-------------------------------------------------------------------
 params = {
     TableName: 'authorization_local',
     Key: {
-        pkey: 'account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb',
-        skey: 'metadata:a72dfb93-c292-43ab-8e19-c34a60ed8cdb'
+        pkey: 'account:acc_id_1',
+        skey: 'metadata:acc_id_1'
     }
 };
 // documentClient.get(params, callbackHandler);
@@ -30,7 +30,7 @@ params = {
     TableName: 'authorization_local',
     KeyConditionExpression: 'pkey = :pkey and begins_with(skey, :skey)',
     ExpressionAttributeValues: {
-        ":pkey": 'account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb',
+        ":pkey": 'account:acc_id_1',
         ":skey": 'team:',
     }
 };
@@ -42,7 +42,7 @@ params = {
     TableName: 'authorization_local',
     KeyConditionExpression: 'pkey = :pkey',
     ExpressionAttributeValues: {
-        ":pkey": 'account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb:team:d7b3a017-3987-4f4e-bc17-c9b89d0354cf',
+        ":pkey": 'account:acc_id_1:team:team_id_1',
     }
 };
 // documentClient.query(params, callbackHandler);
@@ -54,7 +54,7 @@ params = {
     IndexName: 'inverted_index',
     KeyConditionExpression: 'skey = :skey', // This is the name of partition key of that inverted_index
     ExpressionAttributeValues: {
-        ":skey": 'user:6e4f047f-97aa-473f-bd82-1b6e276c8210',
+        ":skey": 'user:user_id_3',
     }
 };
 // documentClient.query(params, callbackHandler);
@@ -69,7 +69,7 @@ params = {
         "#name": 'name',
     },
     ExpressionAttributeValues: {
-        ":pkey": "account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
+        ":pkey": "account:acc_id_1",
         ":name": 'Team',
     }
 };
@@ -89,7 +89,7 @@ params = {
         ":name": 'W',
     }
 };
-documentClient.query(params, callbackHandler);
+// documentClient.query(params, callbackHandler);
 
 console.log('Find users by name begins_with:');
 console.log('--------------------------------------------------------------------------------');
@@ -102,7 +102,7 @@ params = {
     },
     ExpressionAttributeValues: {
         ":entityType": "appUser",
-        ":name": 'J',
+        ":name": 'M',
     }
 };
 documentClient.query(params, callbackHandler);
