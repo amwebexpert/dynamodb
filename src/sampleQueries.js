@@ -24,7 +24,7 @@ params = {
 };
 // documentClient.get(params, callbackHandler);
 
-console.log('Get teams of Account:');
+console.log('Find all teams of Account:');
 console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
@@ -36,7 +36,7 @@ params = {
 };
 // documentClient.query(params, callbackHandler);
 
-console.log('Get all members of a team:');
+console.log('Find all members of a team:');
 console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
@@ -47,14 +47,30 @@ params = {
 };
 // documentClient.query(params, callbackHandler);
 
-console.log('Get all teams an appUser if member of:');
+console.log('Find all teams an appUser if member of:');
 console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     IndexName: 'inverted_index',
-    KeyConditionExpression: 'skey = :skey', // This is the partition key of that index
+    KeyConditionExpression: 'skey = :skey', // This is the name of partition key of that inverted_index
     ExpressionAttributeValues: {
         ":skey": 'user:6e4f047f-97aa-473f-bd82-1b6e276c8210',
+    }
+};
+// documentClient.query(params, callbackHandler);
+
+console.log('Find teams by name inside an account:');
+console.log('--------------------------------------------------------------------------------');
+params = {
+    TableName: 'authorization_local',
+    KeyConditionExpression: 'pkey = :pkey',
+    FilterExpression: 'contains(#name, :name)',
+    ExpressionAttributeNames: {
+        "#name": 'name',
+    },
+    ExpressionAttributeValues: {
+        ":pkey": "account:a72dfb93-c292-43ab-8e19-c34a60ed8cdb",
+        ":name": 'Team',
     }
 };
 documentClient.query(params, callbackHandler);

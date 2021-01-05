@@ -30,6 +30,8 @@ then open browser at http://localhost:8001/
 ## DynamoDB SDK usage of DocumentClient
 
     https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/dynamodb-example-document-client.html
+    https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.KeyConditionExpressions
+    https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.OperatorsAndFunctions.html
     
 
 ## Create table and data using Node.js
