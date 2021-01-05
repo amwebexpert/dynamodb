@@ -83,7 +83,7 @@ teams.forEach(function (team) {
     });
 });
 
-// TeamUsers sample
+// TeamMembers sample
 // -----------------------------------
 console.log('Importing team member elements:');
 const teamMembers = JSON.parse(fs.readFileSync('src/data/teamMembers.json', 'utf8'));

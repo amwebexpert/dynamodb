@@ -22,10 +22,15 @@ or open the shell UI:
     aws dynamodb list-tables --endpoint-url http://localhost:8000
 
 
-## Starting DynamoDB admin GUI
+## Starting dynamodb-admin GUI
 
     npm run admin-console
 then open browser at http://localhost:8001/
+
+## DynamoDB SDK usage of DocumentClient
+
+    https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/dynamodb-example-document-client.html
+    
 
 ## Create table and data using Node.js
 
