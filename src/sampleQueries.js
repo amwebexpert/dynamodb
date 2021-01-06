@@ -13,8 +13,20 @@ function callbackHandler(err, data) {
     }
 }
 
-console.log('Get an Account:');
-console.log('--------------------------------------------------------------------------------');
+function execute(description, method, params) {
+    documentClient[method](params, function (err, data) {
+        console.log(description);
+        console.log('--------------------------------------------------------------------------------');
+
+        if (err) {
+            console.log('ERROR', err);
+        } else {
+            // console.log('SUCCESS', JSON.stringify(data));
+            console.log('SUCCESS', data);
+        }
+    });
+}
+
 params = {
     TableName: 'authorization_local',
     Key: {
@@ -22,10 +34,8 @@ params = {
         skey: 'metadata:acc_id_1'
     }
 };
-// documentClient.get(params, callbackHandler);
+// execute('Get an Account:', 'get', params);
 
-console.log('Find all teams of Account:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     KeyConditionExpression: 'pkey = :pkey and begins_with(skey, :skey)',
@@ -34,10 +44,8 @@ params = {
         ":skey": 'team:',
     }
 };
-// documentClient.query(params, callbackHandler);
+// execute('Find all teams of Account:', 'query', params);
 
-console.log('Find all members of a team:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     KeyConditionExpression: 'pkey = :pkey',
@@ -45,10 +53,8 @@ params = {
         ":pkey": 'account:acc_id_1:team:team_id_1',
     }
 };
-// documentClient.query(params, callbackHandler);
+// execute('Find all members of a team:', 'query', params);
 
-console.log('Find all teams an appUser if member of:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     IndexName: 'inverted_index',
@@ -57,10 +63,8 @@ params = {
         ":skey": 'user:user_id_3',
     }
 };
-// documentClient.query(params, callbackHandler);
+// execute('Find all teams an appUser if member of:', 'query', params);
 
-console.log('Find teams by name inside an account:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     KeyConditionExpression: 'pkey = :pkey',
@@ -73,10 +77,8 @@ params = {
         ":name": 'Team',
     }
 };
-// documentClient.query(params, callbackHandler);
+// execute('Find teams by name inside an account:', 'query', params);
 
-console.log('Find Account by name begins_with:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     IndexName: 'name_index',
@@ -89,10 +91,8 @@ params = {
         ":name": 'W',
     }
 };
-// documentClient.query(params, callbackHandler);
+// execute('Find Account by name begins_with:', 'query', params);
 
-console.log('Find users by name begins_with:');
-console.log('--------------------------------------------------------------------------------');
 params = {
     TableName: 'authorization_local',
     IndexName: 'name_index',
@@ -102,7 +102,7 @@ params = {
     },
     ExpressionAttributeValues: {
         ":entityType": "appUser",
-        ":name": 'M',
+        ":name": 'J',
     }
 };
-documentClient.query(params, callbackHandler);
+execute('Find users by name begins_with:', 'query', params);
