@@ -17,6 +17,19 @@ then test it like this:
 or open the shell UI:
     http://localhost:8000/shell/
 
+Examples Web shell commands:
+- type 'list' + control-space this can show/insert code snipets like:
+
+```
+dynamodb.listTables().eachPage(function(err, data) {
+    if (err) {
+        ppJson(err); // an error occurred
+    } else if (data) {
+        ppJson(data);
+    }
+});
+```
+
 ### Some commandline examples:
 
     aws dynamodb list-tables --endpoint-url http://localhost:8000
@@ -40,7 +53,10 @@ then open browser at http://localhost:8001/
         - indexes with `ALL` instead of KEYS_ONLY, INCLUDE
         - 
 
-## Create table and data using Node.js
+## Create table and add data using Node.js
 
+    node src/deleteTable.js
     node src/createTable.js
     node src/loadData.js
+    node src/sampleQueries.js
+

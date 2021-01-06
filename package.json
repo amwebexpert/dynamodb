@@ -2,17 +2,17 @@
   "name": "dynamo-db-learning",
   "version": "1.0.0",
   "description": "Tutorial",
+  "author": "amwebexpert@gmail.com",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "admin-console": "cross-env DYNAMO_ENDPOINT=http://localhost:8000 npx dynamodb-admin"
   },
-  "author": "amwebexpert@gmail.com",
-  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "dynamodb-admin": "^4.0.0"
-  },
-  "dependencies": {
-    "uuid": "^8.3.2"
   }
 }
