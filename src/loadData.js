@@ -16,12 +16,11 @@ appUsers.forEach(function (appUser) {
         TableName: 'authorization_local',
         Item: {
             pkey: `user:${uuid}`,
-            skey: `metadata:${uuid}`,
+            skey: 'user',
             firstName: appUser.firstName,
             lastName: appUser.lastName,
             email: appUser.email,
             name: `${appUser.firstName} ${appUser.lastName}`,
-            entityType: 'appUser'
         }
     };
 
@@ -45,10 +44,9 @@ accounts.forEach(function (account) {
         TableName: 'authorization_local',
         Item: {
             pkey: `account:${uuid}`,
-            skey: `metadata:${uuid}`,
+            skey: 'account',
             name: account.name,
             campaigns: account.campaigns,
-            entityType: 'account'
         }
     };
 
@@ -76,7 +74,6 @@ teams.forEach(function (team) {
             skey: `team:${uuid}`,
             name: team.name,
             subjects: team.subjects,
-            entityType: 'team'
         }
     };
 
@@ -105,7 +102,6 @@ teamMembers.forEach(function (teamMember, i) {
             skey: `user:${userUuid}`,
             privileges: teamMember.privileges,
             note: teamMember.note,
-            entityType: 'teamMembership',
             memberSince: new Date().toISOString()
         }
     };

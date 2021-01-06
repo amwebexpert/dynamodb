@@ -34,7 +34,7 @@ params = {
         skey: 'metadata:acc_id_1'
     }
 };
-// execute('Get an Account:', 'get', params);
+execute('Get an Account:', 'get', params);
 
 params = {
     TableName: 'authorization_local',
@@ -44,7 +44,7 @@ params = {
         ":skey": 'team:',
     }
 };
-// execute('Find all teams of Account:', 'query', params);
+execute('Find all teams of Account:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
@@ -63,7 +63,7 @@ params = {
         ":skey": 'user:user_id_3',
     }
 };
-// execute('Find all teams an appUser if member of:', 'query', params);
+execute('Find all teams an appUser if member of:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
@@ -77,12 +77,12 @@ params = {
         ":name": 'Team',
     }
 };
-// execute('Find teams by name inside an account:', 'query', params);
+execute('Find teams by name inside an account:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
     IndexName: 'name_index',
-    KeyConditionExpression: 'entityType = :entityType and begins_with(#name, :name)',
+    KeyConditionExpression: 'skey = :entityType and begins_with(#name, :name)',
     ExpressionAttributeNames: {
         "#name": 'name',
     },
@@ -91,18 +91,18 @@ params = {
         ":name": 'W',
     }
 };
-// execute('Find Account by name begins_with:', 'query', params);
+execute('Find Account by name begins_with:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
     IndexName: 'name_index',
-    KeyConditionExpression: 'entityType = :entityType and begins_with(#name, :name)',
+    KeyConditionExpression: 'skey = :entityType and begins_with(#name, :name)',
     ExpressionAttributeNames: {
         "#name": 'name',
     },
     ExpressionAttributeValues: {
-        ":entityType": "appUser",
+        ":entityType": "user",
         ":name": 'J',
     }
 };
-//execute('Find users by name begins_with:', 'query', params);
+execute('Find users by name begins_with:', 'query', params);

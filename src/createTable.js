@@ -22,7 +22,6 @@ params = {
     AttributeDefinitions: [
         { AttributeName: 'pkey', AttributeType: 'S' },
         { AttributeName: 'skey', AttributeType: 'S' },
-        { AttributeName: 'entityType', AttributeType: 'S' },
         { AttributeName: 'name', AttributeType: 'S' },
     ],
     ProvisionedThroughput: {
@@ -54,7 +53,7 @@ params = {
             IndexName: 'name_index',
             KeySchema: [
                 {
-                    AttributeName: 'entityType',
+                    AttributeName: 'skey',
                     KeyType: 'HASH'
                 },
                 {
