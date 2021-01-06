@@ -60,5 +60,7 @@ then open browser at http://localhost:8001/
     node src/deleteTable.js
     node src/createTable.js
     node src/loadData.js
-    node src/sampleQueries.js
+    node src/queries-account.js
+    node src/queries-team.js
+    node src/queries-user.js
 
