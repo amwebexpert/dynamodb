@@ -105,7 +105,8 @@ teamMembers.forEach(function (teamMember, i) {
             skey: `user:${userUuid}`,
             privileges: teamMember.privileges,
             note: teamMember.note,
-            entityType: 'teamMembership'
+            entityType: 'teamMembership',
+            memberSince: new Date().toISOString()
         }
     };
 

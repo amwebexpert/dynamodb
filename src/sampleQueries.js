@@ -53,7 +53,7 @@ params = {
         ":pkey": 'account:acc_id_1:team:team_id_1',
     }
 };
-// execute('Find all members of a team:', 'query', params);
+execute('Find all members of a team:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
@@ -105,4 +105,4 @@ params = {
         ":name": 'J',
     }
 };
-execute('Find users by name begins_with:', 'query', params);
+//execute('Find users by name begins_with:', 'query', params);
