@@ -21,10 +21,10 @@ params = {
     TableName: 'authorization_local',
     Key: {
         pkey: 'account:acc_id_1',
-        skey: 'metadata:acc_id_1'
+        skey: 'account'
     }
 };
-execute('Get an Account:', 'get', params);
+execute('Get an Account for CRUD operations:', 'get', params);
 
 params = {
     TableName: 'authorization_local',
