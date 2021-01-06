@@ -51,7 +51,9 @@ then open browser at http://localhost:8001/
     - Cost considerations:
         - fetching users/accounts by using filtering like `contains` which causes table scanning
         - indexes with `ALL` instead of KEYS_ONLY, INCLUDE
-        - 
+    - Version for "optimism looking" @DynamoDBVersionAttribute annotation
+    - Cashing using Spring cache annotations
+    - UUID vs other id
 
 ## Create table and add data using Node.js
 
