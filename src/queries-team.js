@@ -29,14 +29,15 @@ execute('Find all members of a team:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
-    KeyConditionExpression: 'pkey = :pkey',
+    KeyConditionExpression: 'pkey = :pkey and begins_with(skey, :skey)',
     FilterExpression: 'contains(#name, :name)',
     ExpressionAttributeNames: {
         "#name": 'name',
     },
     ExpressionAttributeValues: {
         ":pkey": "account:acc_id_1",
+        ":skey": "team:",
         ":name": 'Team',
     }
 };
-execute('Find teams by name inside an account:', 'query', params);
+execute('Find teams by contains(name) inside an account:', 'query', params);
