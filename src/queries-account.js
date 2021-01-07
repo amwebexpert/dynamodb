@@ -48,7 +48,7 @@ params = {
         ":name": 'W',
     }
 };
-execute('Find Account by name begins_with:', 'query', params);
+execute('Find Account by name begins_with within the whole system:', 'query', params);
 
 params = {
     TableName: 'authorization_local',
@@ -63,4 +63,4 @@ params = {
         ":name": 'c',
     }
 };
-execute('Find Account by name contains:', 'query', params);
+execute('Find Account by name contains within the whole system:', 'query', params);
