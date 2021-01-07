@@ -50,6 +50,8 @@ params = {
             }
         },
         {
+            // Allows queries on Keys like:
+            // KeyConditionExpression: 'skey = :entityType and begins_with(#name, :name)',
             IndexName: 'name_index',
             KeySchema: [
                 {
@@ -60,6 +62,25 @@ params = {
                     AttributeName: 'name',
                     KeyType: 'RANGE'
                 }
+            ],
+            Projection: {
+                ProjectionType: 'ALL' // ALL, KEYS_ONLY, INCLUDE
+            },
+            ProvisionedThroughput: {
+                ReadCapacityUnits: 5,
+                WriteCapacityUnits: 5
+            }
+        },
+        {
+            // Allows queries on attributes with 'contains' expressions like:
+            // KeyConditionExpression: 'skey = :entityType',
+            // FilterExpression: 'contains(#name, :name)',
+            IndexName: 'entity_type_index',
+            KeySchema: [
+                {
+                    AttributeName: 'skey',
+                    KeyType: 'HASH'
+                },
             ],
             Projection: {
                 ProjectionType: 'ALL' // ALL, KEYS_ONLY, INCLUDE

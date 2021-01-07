@@ -49,3 +49,18 @@ params = {
     }
 };
 execute('Find Account by name begins_with:', 'query', params);
+
+params = {
+    TableName: 'authorization_local',
+    IndexName: 'entity_type_index',
+    KeyConditionExpression: 'skey = :entityType',
+    FilterExpression: 'contains(#name, :name)',
+    ExpressionAttributeNames: {
+        "#name": 'name',
+    },
+    ExpressionAttributeValues: {
+        ":entityType": "account",
+        ":name": 'c',
+    }
+};
+execute('Find Account by name contains:', 'query', params);
