@@ -36,6 +36,19 @@ Examples Web shell commands:
 
 ### Step 4 Starting dynamodb-admin GUI
 
+Two good Admin consoles have been tested in this POC
+
+#### Step 4-a Starting dynamodb-manager GUI
+
+Reference: https://github.com/YoyaTeam/dynamodb-manager
+
+    ./startDynamoDBManager.sh
+then open browser at http://localhost:8002/
+
+#### Step 4-b Starting dynamodb-admin GUI
+
+Reference: https://github.com/aaronshaf/dynamodb-admin
+
     npm run admin-console
 then open browser at http://localhost:8001/
 
