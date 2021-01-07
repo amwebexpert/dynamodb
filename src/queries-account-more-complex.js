@@ -51,7 +51,7 @@ async function collectTeamMembers(team, userIDs) {
         // Display info on console
         console.log(team.name, membershipPK);
         // console.log(data.Items.map(user => user.note.S));
-        console.log('\t ==> ' + data.Items.map(user => user.skey.S).join(', '));
+        console.log('\t ==> ' + data.Items.map(user => user.note.S).join(', '));
         data.Items.forEach(user => userIDs.add(user.skey.S));
 
     } catch (err) {
