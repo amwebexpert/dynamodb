@@ -5,54 +5,27 @@
 ### Step 1
     npm install
 
-### Step 2 Download jar from AWS and uncompress
+### Step 2 Starting local instance of DynamoDB
+    npm run dynamodb:start
 
-Download link:
-    https://s3.us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz
-
-Unzip it inside this project, this normaly creates these artifacts:
-    /DynamoDBLocal_lib
-    /third_party_licenses
-    DynamoDBLocal.jar
-    LICENSE.txt
-    README.txt
-
-### Step 3 Starting local instance of DynamoDB
-    ./startDynamoDB.sh
-
-then test it like this:
+then test it from command line like this:
     aws dynamodb list-tables --endpoint-url http://localhost:8000
+
 or open the shell UI:
     http://localhost:8000/shell/
-
 Examples Web shell commands:
 - type 'list' + control-space this can show/insert code snipets like:
 
+### Step 3 Starting dynamodb-admin GUI
 
-### Some commandline examples:
-
-    aws dynamodb list-tables --endpoint-url http://localhost:8000
-
-
-### Step 4 Starting dynamodb-admin GUI
-
-Two good Admin consoles have been tested in this POC
-
-#### Step 4-a Starting dynamodb-manager GUI
-
-Reference: https://github.com/YoyaTeam/dynamodb-manager
+Two good Admin consoles have been tested in this POC:
+- https://github.com/YoyaTeam/dynamodb-manager
+- https://github.com/aaronshaf/dynamodb-admin
 
     ./startDynamoDBManager.sh
 then open browser at http://localhost:8002/
 
-#### Step 4-b Starting dynamodb-admin GUI
-
-Reference: https://github.com/aaronshaf/dynamodb-admin
-
-    npm run admin-console
-then open browser at http://localhost:8001/
-
-### Step 5 Create table, add data and execute queries
+### Play with scripts
 
     node src/deleteTable.js
     node src/createTable.js

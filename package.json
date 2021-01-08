@@ -6,13 +6,14 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "admin-console": "cross-env DYNAMO_ENDPOINT=http://localhost:8000 npx dynamodb-admin"
+    "dynamodb:start": "node src/dynamoDbStart.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.824.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "dynamodb-admin": "^4.0.0"
+    "dynamodb-local": "0.0.31"
   }
 }
